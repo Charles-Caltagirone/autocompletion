@@ -14,7 +14,7 @@ if (isset($_GET['search2'])) {
     echo $json2;
 }
 if (isset($_GET['id'])) {
-    $request = $bdd->prepare("SELECT * FROM nourriture WHERE id = ?");
+    $request = $bdd->prepare("SELECT * FROM nourriture WHERE id = ? ORDER BY nom ASC");
     $request->execute([$_GET['id']]);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
     $json = json_encode($result);
