@@ -18,11 +18,11 @@ require "./config.php";
 <body>
     <div class="recherche">
         <form>
-            <input type="search" id="search-bar" class="mt-5" name="search" placeholder="Recherchez ici..." autocomplete="off" autofocus style="border: none;">
+            <input type="text" id="search-bar" class="mt-5" name="search" placeholder="Recherchez ici..." autocomplete="off" autofocus style="border: none;">
             <p id="exact" class="text-light" style="display: none">Résultats exacts :</p>
             <div id="result">
             </div>
-            <hr id="separation" class="border border-primary border-2 opacity-50" style="display: none">
+            <hr id="separation" class="border border-primary border-2 opacity-50">
             <p id="contenant" class="text-light" style="display: none">Contenant la recherche :</p>
             <div id="result2">
             </div>

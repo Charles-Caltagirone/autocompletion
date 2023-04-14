@@ -5,6 +5,7 @@ body {
   /* flex-direction: column; */
   align-items: center;
 }
+
 #search-bar {
   width: 100%;
   margin-top: 2em;
@@ -16,15 +17,31 @@ body a {
   text-decoration: none;
   color: lightcoral;
 }
+
 p {
   margin-top: 2em;
   color: lightgreen;
   display: flex;
   justify-content: center;
 }
+
 #image {
   display: flex;
   margin: auto;
   width: 300px;
   border-radius: 1em;
+}
+
+#separation {
+  display: none;
+}
+
+.searchHome {
+  display: flex;
+  align-items: baseline;
+}
+
+.home {
+  margin-right: 1em;
+  zoom: 1.3;
 }

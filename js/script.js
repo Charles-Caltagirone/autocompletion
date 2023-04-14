@@ -9,11 +9,9 @@ if (search) {
     search.addEventListener("keyup", () => {
         result.innerHTML = "";
         result2.innerHTML = "";
-        // separation.style.display = "none";
-        if(search.value == ""){
+        if (search.value == "") {
             window.location.reload()
-        }
-        if (search.value != "") {
+        } else {
             separation.style.display = "block";
             contenant.style.display = "block";
             exact.style.display = "block";
@@ -48,6 +46,7 @@ if (search) {
     });
 }
 
+
 const link = window.location.href;
 const id = link.split("=");
 const image = document.getElementById("image");
@@ -66,3 +65,28 @@ fetch("./recherche.php/?id=" + id[1])
             result.appendChild(resultsSearch);
         });
     });
+
+// désactiver la touche ENTREE
+// 
+// search.addEventListener("keypress", function (event) {
+//     if (event.key === "Enter") {
+//     }
+// });
+
+// function disableEnterKey(e) {
+//     let key;
+//     if (window.event)
+//         key = window.event.keyCode; //IE
+//     else
+//         key = e.which; //firefox      
+
+//     return (key != 13);
+// }
+
+// function disable() {
+//     document.keypress = function (event) {
+//         if (event.key === "Enter") {
+//             return false;
+//         }
+//     }
+// }
