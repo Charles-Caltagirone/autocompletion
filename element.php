@@ -29,10 +29,10 @@
         </form>
     </div>
 
-    <div id="">
+    <div id="resultNourriture">
         <img src="" alt="" id="image">
     </div>
-    <script src="./js/script.js"></script>
 </body>
 
 </html>
+<script src="./js/script.js"></script>

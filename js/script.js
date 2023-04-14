@@ -4,13 +4,16 @@ const result2 = document.getElementById("result2");
 const separation = document.getElementById("separation");
 const contenant = document.getElementById("contenant");
 const exact = document.getElementById("exact");
+const resultNourriture = document.getElementById("resultNourriture");
 
 if (search) {
     search.addEventListener("keyup", () => {
         result.innerHTML = "";
         result2.innerHTML = "";
         if (search.value == "") {
-            window.location.reload()
+            separation.style.display = "none";
+            contenant.style.display = "none";
+            exact.style.display = "none";
         } else {
             separation.style.display = "block";
             contenant.style.display = "block";
@@ -62,31 +65,16 @@ fetch("./recherche.php/?id=" + id[1])
             let resultsSearch = document.createElement("p");
             resultsSearch.innerHTML = "Nom: " + element.nom + "</br> Type: " + element.type;
             image.src = "./assets/" + element.nom + ".gif";
-            result.appendChild(resultsSearch);
+            resultNourriture.appendChild(resultsSearch);
+            resultNourriture.appendChild(image);
         });
     });
 
 // désactiver la touche ENTREE
 // 
-// search.addEventListener("keypress", function (event) {
-//     if (event.key === "Enter") {
-//     }
-// });
-
-// function disableEnterKey(e) {
-//     let key;
-//     if (window.event)
-//         key = window.event.keyCode; //IE
-//     else
-//         key = e.which; //firefox      
-
-//     return (key != 13);
-// }
-
-// function disable() {
-//     document.keypress = function (event) {
-//         if (event.key === "Enter") {
-//             return false;
-//         }
-//     }
-// }
+window.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        return false;
+    }
+});
