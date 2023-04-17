@@ -29,7 +29,7 @@
         </form>
     </div>
 
-    <div id="resultNourriture">
+    <div id="imgNourriture">
         <img src="" alt="" id="image">
     </div>
 </body>

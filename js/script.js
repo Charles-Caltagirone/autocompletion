@@ -1,10 +1,10 @@
-const search = document.getElementById("search-bar");
-const result = document.getElementById("result");
-const result2 = document.getElementById("result2");
-const separation = document.getElementById("separation");
-const contenant = document.getElementById("contenant");
-const exact = document.getElementById("exact");
-const resultNourriture = document.getElementById("resultNourriture");
+const search = document.getElementById("search-bar"); //le input
+const result = document.getElementById("result"); //les résultats exacts
+const result2 = document.getElementById("result2"); //les résultats contenant
+const separation = document.getElementById("separation"); //la barre de séparation
+const contenant = document.getElementById("contenant"); //le titre des result contenant
+const exact = document.getElementById("exact"); //le titre des resultats exacts
+const imgNourriture = document.getElementById("imgNourriture"); //img du résultat
 
 if (search) {
     search.addEventListener("keyup", () => {
@@ -49,7 +49,7 @@ if (search) {
     });
 }
 
-
+// On insère le resultat sur la page Element.php
 const link = window.location.href;
 const id = link.split("=");
 const image = document.getElementById("image");
@@ -65,13 +65,12 @@ fetch("./recherche.php/?id=" + id[1])
             let resultsSearch = document.createElement("p");
             resultsSearch.innerHTML = "Nom: " + element.nom + "</br> Type: " + element.type;
             image.src = "./assets/" + element.nom + ".gif";
-            resultNourriture.appendChild(resultsSearch);
-            resultNourriture.appendChild(image);
+            imgNourriture.appendChild(resultsSearch);
+            imgNourriture.appendChild(image);
         });
     });
 
 // désactiver la touche ENTREE
-// 
 window.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
